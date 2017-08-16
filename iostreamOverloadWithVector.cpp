@@ -22,9 +22,9 @@ class myVector:public vector<T>{
 int main(){
     myVector<int> a;
 
-  // cin>>a>>a>>a[0];//在輸入a[0]時出錯
+  // cin>>a>>a>>a[0];//have error when cin>>a[0]
 
-  //正常
+  //no error
     cin>>a>>a;
     cin>>a[0];
 
