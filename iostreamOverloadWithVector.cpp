@@ -2,29 +2,28 @@
 #include<vector>
 using namespace std;
 
-template<class T>
-class myVector:public vector<T>{
-    friend ostream& operator<<(ostream& out,const myVector<T>& list){
+    template<class T>
+    ostream& operator<<(ostream& out,const vector<T>& list){
         for(auto& tmp : list){
             out<<tmp<<' ';
         }
         return out;
     }
-    friend istream& operator>>(istream& in,myVector<T>& list){
+    template<class T>
+    istream& operator>>(istream& in, vector<T>& list){
         T tmp;
         in>>tmp;
         list.push_back(tmp);
         return in;
     }
 
-};
 
 int main(){
-    myVector<int> a;
+    vector<int> a;
 
-  // cin>>a>>a>>a[0];//have error when cin>>a[0]
+   cin>>a>>a>>a[0];//在輸入a[0]時出錯
 
-  //no error
+  //正常
     cin>>a>>a;
     cin>>a[0];
 
